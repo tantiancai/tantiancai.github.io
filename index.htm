@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>测试页面</title>
+<script>
+
+function postMessage(){
+  if ('ReactNativeWebView' in window) {
+    window.ReactNativeWebView.postMessage(
+      JSON.stringify({ type: 'hoge', hoge: 'ほげ' }),
+    )
+  } else {
+    alert('WebViewではありません');
+  }
+}
+
+</script>
+</head>
+
+<body>
+<h1>文档内容</h1>
+
+<button onclick="postMessage()">postMessage测试</button>
+</body>
+ 
+</html>
