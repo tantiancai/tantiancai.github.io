@@ -11,8 +11,9 @@ function postMessage(){
     window.ReactNativeWebView.postMessage(
       JSON.stringify({ type: 'hoge', hoge: 'ほげ' }),
     )
+    alert('ReactNativeのWebViewにメッセージを送信した。');
   } else {
-    alert('WebViewではありません');
+    alert('WebViewではありません。');
   }
 }
 
