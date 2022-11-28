@@ -23,6 +23,7 @@ function makeDynamicLink(){
   
   const a = document.createElement('a');
   a.href = 'https://kddi.page.link/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + txtDeepLink;
+  a.innerText = a.href;
   const div = document.getElementById('divDynamicLink');
   div.appendChild(a);
 }
