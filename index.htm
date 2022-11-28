@@ -11,7 +11,7 @@ function postMessage(){
     window.ReactNativeWebView.postMessage(
       JSON.stringify({ type: 'hoge', hoge: 'ほげ' }),
     )
-    alert('ReactNativeのWebViewにメッセージを送信した。');
+    alert('ReactNativeのWebViewにメッセージを送信しました。');
   } else {
     alert('WebViewではありません。');
   }
@@ -33,11 +33,18 @@ function postMessage(){
     https://kddi.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet&afl=http://210.13.123.226:8008/eagle-server/help_pages/index.html/?id%3D6355e51d167f6e5d8fb63592%26type%3D3
     </a></p>
   <p/>
+  <p>Mock API用</p>
   <p><a href="https://www.notexist.org/">登録完了URL（存在しないURL）</a></p>
   <p/>
   <p><a href="https://kddi.page.link/payment?result=0">決済完了URL</a></p>
   <p/>
   <p><a href="https://kddi.page.link/payment?result=1">決済失敗URL</a></p>
+  <p>開発API用</p>
+  <p><a href="https://www.notexist.org/cardEditEnd">登録完了URL（存在しないURL）</a></p>
+  <p/>
+  <p><a href="https://www.google.com/paySuccess">決済完了URL</a></p>
+  <p/>
+  <p><a href="https://www.google.com/payFailure?ErrCode=DW90001">決済失敗URL</a></p>
 </body>
  
 </html>
