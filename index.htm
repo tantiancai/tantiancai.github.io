@@ -17,12 +17,25 @@ function postMessage(){
   }
 }
 
+function makeDynamicLink(){
+  const txtPackage = document.getElementById('txtPackage').value;
+  const txtDeepLink = document.getElementById('txtDeepLink').value;
+  
+  const a = document.createElement('a');
+  a.href = 'https://kddi.page.link/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + txtDeepLink;
+  const div = document.getElementById('divDynamicLink');
+  div.appendChild(a);
+}
+  
 </script>
 </head>
 
 <body>
 <h1>ダミー画面</h1>
-
+<p>パッケージ名：<input id="txtPackage" value="com.kddi.digitalwallet.dev1"></p>
+<p>DeepLink：<input id="txtDeepLink" value="https://www.google.com/?dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
+<p><button id="btnDynamicLink" onclick="makeDynamicLink" value="DynamicLink作成する" /></p>
+<div id="divDynamicLink"></div>
 <p><button onclick="postMessage()">postMessageテスト</button></p>
 <p><a href="https://kddi.page.link/payment">https://kddi.page.link/payment</a></p>
 <p><a href="https://kddi.page.link/payment" target="_blank">https://kddi.page.link/payment（Open in new window）</a></p>
