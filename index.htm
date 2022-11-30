@@ -18,11 +18,14 @@ function postMessage(){
 }
 
 function makeDynamicLink(){
-  const txtPackage = document.getElementById('txtPackage').value;
+  const packageIndex = Number(document.getElementById('txtPackage').value);
   const txtDeepLink = document.getElementById('txtDeepLink').value;
   
+  const arrDomain = ['https://kddidwdbg.page.link', 'https://kddidwdev.page.link', 'https://kddidwstg.page.link', 'https://kddidw.page.link'];
+  const arrPackage = ['com.kddi.digitalwallet', 'com.kddi.digitalwallet.dev1', 'com.kddi.digitalwallet.stg1', 'com.kddi.digitalwallet.prod1'];
+  
   const a = document.createElement('a');
-  a.href = 'https://kddi.page.link/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + txtPackage;
+  a.href = arrDomain[packageIndex] + '/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + arrPackage[packageIndex];
   a.innerText = a.href;
   const div = document.getElementById('divDynamicLink');
   div.appendChild(a);
@@ -33,18 +36,25 @@ function makeDynamicLink(){
 
 <body>
 <h1>ダミー画面</h1>
-<p>パッケージ名：<input id="txtPackage" value="com.kddi.digitalwallet.dev1"></p>
+<p>パッケージ名：
+  <select id="txtPackage">
+    <option value="0">Debug環境</option>
+    <option value="1">開発環境</option>
+    <option value="2">評価環境</option>
+    <option value="3">商用環境</option>
+  </select>
+</p>
 <p>DeepLink：<input id="txtDeepLink" value="https://www.google.com/?dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
 <p><button id="btnDynamicLink" onclick="makeDynamicLink()">DynamicLink作成する</button></p>
 <div id="divDynamicLink"></div>
 <p><button onclick="postMessage()">postMessageテスト</button></p>
-<p><a href="https://kddi.page.link/payment">https://kddi.page.link/payment</a></p>
-<p><a href="https://kddi.page.link/payment" target="_blank">https://kddi.page.link/payment（Open in new window）</a></p>
+<p><a href="https://kddidwdbg.page.link/payment_test">https://kddidwdbg.page.link/payment_test</a></p>
+<p><a href="https://kddidwdbg.page.link/payment_test" target="_blank">https://kddidwdbg.page.link/payment_test（Open in new window）</a></p>
   <p/>
   <p><a href="https://www.baidu.com">百度</a></p>
   <p/>
-  <p><a href="https://kddi.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet&afl=http://210.13.123.226:8008/eagle-server/help_pages/index.html/?id%3D6355e51d167f6e5d8fb63592%26type%3D3">
-    https://kddi.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet&afl=http://210.13.123.226:8008/eagle-server/help_pages/index.html/?id%3D6355e51d167f6e5d8fb63592%26type%3D3
+  <p><a href="https://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet">
+    https://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet
     </a></p>
   <p/>
   <p>Mock API用</p>
