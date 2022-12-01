@@ -28,7 +28,9 @@ function makeDynamicLink(){
   a.href = arrDomain[packageIndex] + '/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + arrPackage[packageIndex];
   a.innerText = a.href;
   const div = document.getElementById('divDynamicLink');
-  div.appendChild(a);
+  const p = document.createElement('p');
+  p.addpendChild(a);
+  div.appendChild(p);
 }
   
 </script>
