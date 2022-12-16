@@ -20,12 +20,14 @@ function postMessage(){
 function makeDynamicLink(){
   const packageIndex = Number(document.getElementById('txtPackage').value);
   const txtDeepLink = document.getElementById('txtDeepLink').value;
+  const txtPrefix = 'https://www.google.com/';
+  const txtProfix = txtDeepLink.replace(txtPrefix, '');
   
   const arrDomain = ['https://kddidwdbg.page.link', 'https://kddidwdev.page.link', 'https://kddidwstg.page.link', 'https://kddidw.page.link'];
   const arrPackage = ['com.kddi.digitalwallet', 'com.kddi.digitalwallet.dev1', 'com.kddi.digitalwallet.stg1', 'com.kddi.digitalwallet.prod1'];
   
   const a = document.createElement('a');
-  a.href = arrDomain[packageIndex] + '/?link=' + encodeURIComponent(txtDeepLink) + '&apn=' + arrPackage[packageIndex];
+  a.href = arrDomain[packageIndex] + '/?link=' + txtPrefix + encodeURIComponent(txtProfix) + '&apn=' + arrPackage[packageIndex];
   a.innerText = a.href;
   const div = document.getElementById('divDynamicLink');
   const p = document.createElement('p');
@@ -46,7 +48,7 @@ function makeDynamicLink(){
     <option value="3">商用環境</option>
   </select>
 </p>
-<p>DeepLink：<input id="txtDeepLink" size="60" value="https://www.google.com/?dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
+<p>DeepLink：<input id="txtDeepLink" size="90" value="https://www.google.com/?dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
 <p><button id="btnDynamicLink" onclick="makeDynamicLink()">DynamicLink作成する</button></p>
 <div id="divDynamicLink"></div>
 <p><button onclick="postMessage()">postMessageテスト</button></p>
