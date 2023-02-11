@@ -20,14 +20,13 @@ function postMessage(){
 function makeDynamicLink(){
   const packageIndex = Number(document.getElementById('txtPackage').value);
   const txtDeepLink = document.getElementById('txtDeepLink').value;
-  const txtPrefix = 'https://www.google.com/?';
-  const txtProfix = txtDeepLink.replace(txtPrefix, '');
   
-  const arrDomain = ['https://kddidwdbg.page.link', 'https://kddidwdev.page.link', 'https://kddidwstg.page.link', 'https://kddidw.page.link'];
-  const arrPackage = ['com.kddi.digitalwallet', 'com.kddi.digitalwallet.dev1', 'com.kddi.digitalwallet.stg1', 'com.kddi.digitalwallet.prod1'];
+  const arrDomain = ['https://kddidwdbg.page.link', 'https://testalphauwallet.page.link', 'https://alphauwallet.page.link'];
+  const arrPackage = ['com.kddi.digitalwallet', 'com.kddi.wallet.test', 'com.kddi.wallet'];
+  const arrPrefix = ['https://web.test-wallet.kddi.com/intro.html?', 'https://web.test-wallet.kddi.com/intro.html?', 'https://web.wallet.kddi.com/intro.html?'];
   
   const a = document.createElement('a');
-  a.href = arrDomain[packageIndex] + '/?link=' + txtPrefix + encodeURIComponent(txtProfix) + '&apn=' + arrPackage[packageIndex];
+  a.href = arrDomain[packageIndex] + '/?link=' + arrPrefix[packageIndex] + encodeURIComponent(txtDeepLink) + '&apn=' + arrPackage[packageIndex];
   a.innerText = a.href;
   const div = document.getElementById('divDynamicLink');
   const p = document.createElement('p');
@@ -42,30 +41,20 @@ function makeDynamicLink(){
 <h1>ダミー画面</h1>
 <p>パッケージ名：
   <select id="txtPackage">
-    <option value="0">Debug環境</option>
-    <option value="1">開発環境</option>
-    <option value="2" selected="selected">評価環境</option>
-    <option value="3">商用環境</option>
+    <option value="0" selected="selected">Debug環境</option>
+    <option value="1">評価環境</option>
+    <option value="2">商用環境</option>
   </select>
 </p>
-<p>DeepLink：<br /><input id="txtDeepLink" size="90" value="https://www.google.com/?dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
+<p>DeepLink（パラメータ）：<br /><input id="txtDeepLink" size="40" value="dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
 <p><button id="btnDynamicLink" onclick="makeDynamicLink()">DynamicLink作成する</button></p>
 <div id="divDynamicLink"></div>
 <p><button onclick="postMessage()">postMessageテスト</button></p>
-<p><a href="https://kddidwdbg.page.link/payment_test">https://kddidwdbg.page.link/payment_test</a></p>
-<p><a href="https://kddidwdbg.page.link/payment_test" target="_blank">https://kddidwdbg.page.link/payment_test（Open in new window）</a></p>
+<p><a href="https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet">https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet</a></p>
+<p><a href="https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet" target="_blank">https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet（Open in new window）</a></p>
   <p/>
   <p><a href="https://www.baidu.com">百度</a></p>
   <p/>
-  <p><a href="https://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet">
-    https://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet
-    </a></p>
-   <p><a href="digitalwallet://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet">
-    digitalwallet://kddidwdbg.page.link/?link=https://www.google.com/?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet
-    </a></p>
-    <p><a href="https://alphauwallet.page.link/?link=https://www.google.com/?key=value&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106">
-    https://alphauwallet.page.link/?link=https://www.google.com/?key=value&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106
-    </a></p>
   <p/>
   <p>開発API用</p>
   <p><a href="https://payment.digital-wallet.site/cardEditEnd">登録完了URL</a></p>
