@@ -27,7 +27,7 @@ function makeDynamicLink(){
   const arrPrefix = ['https://web.test-wallet.kddi.com/intro.html?', 'https://web.test-wallet.kddi.com/intro.html?', 'https://web.wallet.kddi.com/intro.html?'];
   
   const a = document.createElement('a');
-  a.href = arrDomain[packageIndex] + '/?apn=' + arrPackage[packageIndex] + '&ibi=' + arrPackageIOS[packageIndex] + '&isi=6444401106&link=' + arrPrefix[packageIndex] + encodeURIComponent(txtDeepLink) + ;
+  a.href = arrDomain[packageIndex] + '/?apn=' + arrPackage[packageIndex] + '&ibi=' + arrPackageIOS[packageIndex] + '&isi=6444401106&link=' + arrPrefix[packageIndex] + encodeURIComponent(txtDeepLink);
   a.innerText = a.href;
   a.target = '_blank';
   const div = document.getElementById('divDynamicLink');
