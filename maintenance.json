@@ -2,5 +2,5 @@
   "title": "臨時メンテナンス中です",
   "message": "臨時のメンテナンスを行っています。メンテナンス終了までしばらくお待ちください。",
   "button1": "閉じる",
-  "maintenance": false
+  "maintenance": true
 }
