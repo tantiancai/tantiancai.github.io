@@ -1,25 +1,29 @@
 {
-  "news": [
+  "terms": [
     {
-      "id": 1,
-      "title": "お知らせ1",
-      "subtitle": "2022113001",
-      "datetime": "2022/11/30 10:00",
-      "url": "https://www.google.com/"
+      "terms_type": "1",
+      "ver": "5.0",
+      "url": "https://{domain}/static/terms/application-terms.html"
     },
     {
-      "id": 2,
-      "title": "お知らせ2",
-      "subtitle": "2022113002",
-      "datetime": "2023/11/30 10:00",
-      "url": "https://d6snr521i4eff.cloudfront.net/static/news/2022113002.html"
+      "terms_type": "2",
+      "ver": "2.0",
+      "url": "https://{domain}/server/android-privacy-policy.html"
     },
     {
-      "id": 3,
-      "title": "お知らせ3",
-      "subtitle": "2022121501",
-      "datetime": "2023/12/15 10:00",
-      "url": "https://d6snr521i4eff.cloudfront.net/static/news/2022112801.html"
+      "terms_type": "3",
+      "ver": "1.0",
+      "url": "https://{domain}/server/ios-privacy-policy.html"
+    },
+    {
+      "terms_type": "4",
+      "ver": "5.0",
+      "url": "https://{domain}/static/terms/backup-terms.html"
+    },
+    {
+      "terms_type": "5",
+      "ver": "3.0",
+      "url": "https://{domain}/static/terms/backup-terms_k-digitaldesign.html"
     }
   ]
 }
