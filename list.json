@@ -1,9 +1,11 @@
 {
-  "news":{
+  "news":[
+  {
       "id": 1,
       "title": "お知らせ1",
       "subtitle": "2022113001",
       "datetime": "2022/11/30 10:00",
       "url": "https://www.google.com/"
     }
+    ]
 }
