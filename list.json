@@ -3,7 +3,7 @@
     {
       "terms_type": "1",
       "ver": "5.0",
-      "url": "https://aaa.{domain}/static/terms/application-terms.html"
+      "url": "https://{domain}/static/terms/application-terms.html"
     },
     {
       "terms_type": "2",
