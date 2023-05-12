@@ -29,11 +29,9 @@ function makeDynamicLink(){
   const arrPrefixNew = ['https://web.test-wallet.alpha-u.io/intro.html?', 'https://web.wallet.alpha-u.io/intro.html?', 'https://web.test-wallet.alpha-u.io/intro.html?'];
   
   const a = document.createElement('a');
-  if(domainType ===1){
-    a.href = arrDomain[packageIndex] + '/?apn=' + arrPackage[packageIndex] + '&ibi=' + arrPackageIOS[packageIndex] + '&isi=6444401106&link=' + arrPrefix[packageIndex] + encodeURIComponent(txtDeepLink);
-  }else{
-    a.href = arrDomain[packageIndex] + '/?apn=' + arrPackage[packageIndex] + '&ibi=' + arrPackageIOS[packageIndex] + '&isi=6444401106&link=' + arrPrefixNew[packageIndex] + encodeURIComponent(txtDeepLink);
-  }
+  a.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${packageIndex > 0
+    ? `&ibi=${arrPackageIOS[packageIndex]}&isi=6444401106` : ``}&link=${domainType === 1
+    ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${encodeURIComponent(txtDeepLink)}`;
   a.innerText = a.href;
   a.target = '_blank';
   const div = document.getElementById('divDynamicLink');
