@@ -32,7 +32,7 @@ function makeDynamicLink(){
   a.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${packageIndex > 0
     ? `&ibi=${arrPackageIOS[packageIndex]}&isi=6444401106` : ``}&link=${domainType === 1
     ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${txtDeepLink.startsWith('uri=')
-    ? `/?` : `?`}${encodeURIComponent(txtDeepLink)}`;
+    ? `/wc?` : `?`}${encodeURIComponent(txtDeepLink)}`;
   a.innerText = a.href;
   a.target = '_blank';
   const div = document.getElementById('divDynamicLink');
