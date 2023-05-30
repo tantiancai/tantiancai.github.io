@@ -20,10 +20,12 @@ function postMessage(){
 function makeURIComponent(input){
   let strRet = encodeURIComponent(input);
   if(input.startsWith('wc:')){
-    const searchParams = new URLSearchParams(input);
-    const bridge = searchParams.get('bridge');
-    const bridgeEncode = encodeURIComponent(bridge);
-    const wcURI = encodeURIComponent(input.replace('bridge', bridgeEncode));
+    // const url = new URL(input);
+    // const searchParams = new URLSearchParams(url.search);
+    // const bridge = searchParams.get('bridge');
+    // const bridgeEncode = encodeURIComponent(bridge);
+    // const wcURI = encodeURIComponent(input.replace('bridge', bridgeEncode));
+    const wcURI = encodeURIComponent(input);
     strRet = `uri=${wcURI}`;
   }
   return strRet;
