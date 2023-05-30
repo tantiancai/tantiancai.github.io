@@ -17,6 +17,18 @@ function postMessage(){
   }
 }
 
+function makeURIComponent(input){
+  let strRet = encodeURIComponent(input);
+  if(input.startsWith('wc:')){
+    const searchParams = new URLSearchParams(input);
+    const bridge = searchParams.get('bridge');
+    const bridgeEncode = encodeURIComponent(bridge);
+    const wcURI = encodeURIComponent(input.replace('bridge', bridgeEncode));
+    strRet = `uri=${wcURI}`;
+  }
+  return strRet;
+}
+  
 function makeDynamicLink(){
   const packageIndex = Number(document.getElementById('txtPackage').value);
   const txtDeepLink = document.getElementById('txtDeepLink').value;
@@ -34,8 +46,8 @@ function makeDynamicLink(){
       ? `&ibi=${arrPackageIOS[packageIndex]}${packageIndex === 2 ? `&isi=6444401106` : ``}`
       : ``
     }&link=${domainType === 1 ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${
-    txtDeepLink.startsWith('uri=') ? `/wc?` : `?`
-    }${encodeURIComponent(txtDeepLink)}`;
+    txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
+    }${makeURIComponent(txtDeepLink)}`;
   a.innerText = a.href;
   a.target = '_blank';
   const div = document.getElementById('divDynamicLink');
@@ -63,6 +75,7 @@ function makeDynamicLink(){
   </select>
 </p>
 <p>DeepLink（パラメータ）：<br /><input id="txtDeepLink" size="50" value="dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"></p>
+<p>WalletConnectの場合、直接wc:のURLを記入する</p>
 <p><button id="btnDynamicLink" onclick="makeDynamicLink()">DynamicLink作成する</button></p>
 <div id="divDynamicLink"></div>
 <p><button onclick="postMessage()">postMessageテスト</button></p>
