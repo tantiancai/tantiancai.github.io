@@ -65,7 +65,7 @@ function makeDynamicLink(){
       : ``
     }&link=${domainType === 1 ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${
     txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
-    }${encodeURIComponent(txtDeepLink)}`;
+    }${encodeURIComponent('uri=' + txtDeepLink)}`;
     a.innerText = a.href;
     a.target = '_blank';
     const div = document.getElementById('divDynamicLink');
