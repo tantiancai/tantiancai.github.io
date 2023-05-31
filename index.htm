@@ -56,6 +56,23 @@ function makeDynamicLink(){
   const p = document.createElement('p');
   p.appendChild(a);
   div.appendChild(p);
+  
+  if(txtDeepLink.startsWith('wc:')){
+    const a = document.createElement('a');
+    a.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${
+    packageIndex > 0
+      ? `&ibi=${arrPackageIOS[packageIndex]}${packageIndex === 2 ? `&isi=6444401106` : ``}`
+      : ``
+    }&link=${domainType === 1 ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${
+    txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
+    }${encodeURIComponent(txtDeepLink)}`;
+    a.innerText = a.href;
+    a.target = '_blank';
+    const div = document.getElementById('divDynamicLink');
+    const p = document.createElement('p');
+    p.appendChild(a);
+    div.appendChild(p);
+  }
 }
   
 </script>
