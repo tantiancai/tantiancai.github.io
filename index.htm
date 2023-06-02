@@ -65,9 +65,10 @@ function makeDynamicLink(){
     txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
     }${makeURIComponent(txtDeepLink)}`;
   a2.innerText = a2.href;
-  p.appendChild(a2);
+  const p2 = document.createElement('p');
+  p2.appendChild(a2);
   
-  div.appendChild(p);
+  div.appendChild(p2);
   
 }
   
