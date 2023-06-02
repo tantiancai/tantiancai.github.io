@@ -55,6 +55,7 @@ function makeDynamicLink(){
   const div = document.getElementById('divDynamicLink');
   const p = document.createElement('p');
   p.appendChild(a);
+  div.appendChild(p);
   
   const a2 = document.createElement('a');
   a2.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${
@@ -67,7 +68,6 @@ function makeDynamicLink(){
   a2.innerText = a2.href;
   const p2 = document.createElement('p');
   p2.appendChild(a2);
-  
   div.appendChild(p2);
   
 }
