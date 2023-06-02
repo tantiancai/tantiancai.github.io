@@ -50,29 +50,25 @@ function makeDynamicLink(){
     }&link=${domainType === 1 ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${
     txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
     }${makeURIComponent(txtDeepLink)}`;
-  a.innerText = a.href;
+  a.innerText = a.href + ' (new Window)';
   a.target = '_blank';
   const div = document.getElementById('divDynamicLink');
   const p = document.createElement('p');
   p.appendChild(a);
-  div.appendChild(p);
   
-  if(txtDeepLink.startsWith('wc:')){
-    const a = document.createElement('a');
-    a.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${
+  const a2 = document.createElement('a');
+  a2.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${
     packageIndex > 0
       ? `&ibi=${arrPackageIOS[packageIndex]}${packageIndex === 2 ? `&isi=6444401106` : ``}`
       : ``
     }&link=${domainType === 1 ? arrPrefix[packageIndex] : arrPrefixNew[packageIndex]}${
     txtDeepLink.startsWith('wc:') ? `/wc?` : `?`
-    }${encodeURIComponent('uri=' + txtDeepLink)}`;
-    a.innerText = a.href;
-    a.target = '_blank';
-    const div = document.getElementById('divDynamicLink');
-    const p = document.createElement('p');
-    p.appendChild(a);
-    div.appendChild(p);
-  }
+    }${makeURIComponent(txtDeepLink)}`;
+  a2.innerText = a2.href;
+  p.appendChild(a2);
+  
+  div.appendChild(p);
+  
 }
   
 </script>
