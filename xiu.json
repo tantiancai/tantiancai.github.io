@@ -2,27 +2,27 @@
   "terms": [
     {
       "terms_type": "1",
-      "ver": "6.0",
+      "ver": "7.0",
       "url": "https://d6snr521i4eff.cloudfront.net/static/terms/application-terms.html"
     },
     {
       "terms_type": "2",
-      "ver": "3.0",
+      "ver": "3.1",
       "url": "https://d6snr521i4eff.cloudfront.net/server/android-privacy-policy.html"
     },
     {
       "terms_type": "3",
-      "ver": "2.0",
+      "ver": "2.1",
       "url": "https://d6snr521i4eff.cloudfront.net/server/ios-privacy-policy.html"
     },
     {
       "terms_type": "4",
-      "ver": "6.0",
+      "ver": "6.1",
       "url": "https://d6snr521i4eff.cloudfront.net/static/terms/backup-terms.html"
     },
     {
       "terms_type": "5",
-      "ver": "4.0",
+      "ver": "4.1",
       "url": "https://d6snr521i4eff.cloudfront.net/static/terms/backup-terms_k-digitaldesign.html"
     }
   ]
