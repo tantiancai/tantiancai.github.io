@@ -2,38 +2,24 @@
   "news": [
     {
       "id": 10,
-      "title": "【お知らせ】こんにちはを定期的に送付しています",
+      "title": "【お知らせ】「Alechmy」等のマーケットプレイスとの接続ができるようになりました",
       "subtitle": "",
-      "datetime": "2023/04/05",
-      "url": "https://{domain}/static/news/20230705.html",
-      "tag": [
-        {
-          "name": "お知らせ",
-          "color": "#000000",
-          "background": "#C0C0C0"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "title": "こんにちはを定期的に送付しています",
-      "subtitle": "",
-      "datetime": "2023/04/10",
-      "url": "https://{domain}/static/news/20230705.html",
-      "tag": [
-        {
-          "name": "お知らせ",
-          "color": "#000000",
-          "background": "#C0C0C0"
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "title": "【お知らせ】「OpenSea」等のマーケットプレイスとの接続ができるようになりました",
-      "subtitle": "",
-      "datetime": "2023/07/27",
+      "datetime": "2023/07/28",
       "url": "https://{domain}/static/news/20230727.html",
+      "tag": [
+        {
+          "name": "お知らせ",
+          "color": "#000001",
+          "background": "#C1C1C1"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "【バックアップ設定のお客さまへ】電話番号確認メールを定期的に送付しています",
+      "subtitle": "",
+      "datetime": "2023/07/05",
+      "url": "https://{domain}/static/news/20230705.html",
       "tag": [
         {
           "name": "お知らせ",
