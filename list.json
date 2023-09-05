@@ -2,27 +2,27 @@
   "terms": [
     {
       "terms_type": "1",
-      "ver": "5.0",
+      "ver": "9.0",
       "url": "https://{domain}/static/terms/application-terms.html"
     },
     {
       "terms_type": "2",
-      "ver": "2.0",
+      "ver": "9.0",
       "url": "https://{domain}/server/android-privacy-policy.html"
     },
     {
       "terms_type": "3",
-      "ver": "1.0",
+      "ver": "9.0",
       "url": "https://{domain}/server/ios-privacy-policy.html"
     },
     {
       "terms_type": "4",
-      "ver": "5.0",
+      "ver": "9.0",
       "url": "https://{domain}/static/terms/backup-terms.html"
     },
     {
       "terms_type": "5",
-      "ver": "3.0",
+      "ver": "9.0",
       "url": "https://{domain}/static/terms/backup-terms_k-digitaldesign.html"
     }
   ]
