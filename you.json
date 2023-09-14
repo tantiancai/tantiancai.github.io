@@ -1,4 +1,40 @@
 {
   "news": [
+      {
+      "id": 6,
+      "title": "【個別お知らせ】個別お知らせのテストです id:6",
+      "subtitle": "○○NFTを購入いただいたお客様へのご案内です",
+      "datetime": "2023/07/27",
+      "url": "https://{domain}/static/news/20230727.html",
+      "tag": [{
+        "name":"特別なお知らせ",
+        "color":"#000000",
+        "background":"#EDCFCE"
+      }]
+    },
+    {
+      "id": 2,
+      "title": "【個別お知らせ】個別お知らせのテストです id:2",
+      "subtitle": "",
+      "datetime": "2023/07/05",
+      "url": "https://{domain}/static/news/20230705.html",
+      "tag": [{
+        "name":"特別なお知らせ",
+        "color":"#000000",
+        "background":"#EDCFCE"
+      }]
+    },
+    {
+      "id": 1,
+      "title": "【個別お知らせ】個別お知らせのテストです id:1",
+      "subtitle": "",
+      "datetime": "2023/03/07",
+      "url": "https://{domain}/static/news/20230307.html",
+      "tag": [{
+        "name":"特別なお知らせ",
+        "color":"#000000",
+        "background":"#EDCFCE"
+      }]
+    }    
   ]
 }
