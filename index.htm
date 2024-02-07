@@ -87,10 +87,15 @@
           div.appendChild(p2);
         }
       }
+
+      function showUserAgent() {
+        const p = document.getElementById("userAgent");
+        p.innerText = window.navigator.userAgent;
+      }
     </script>
   </head>
 
-  <body>
+  <body onload="showUserAgent()">
     <h1>ダミー画面</h1>
     <p>
       パッケージ名：
@@ -122,6 +127,7 @@
     </p>
     <div id="divDynamicLink"></div>
     <p><button onclick="postMessage()">postMessageテスト</button></p>
+    <p id="userAgent"></p>
     <p>
       <a
         href="https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet"
