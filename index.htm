@@ -43,7 +43,7 @@
           "com.kddi.wallet",
         ];
         const arrPackageIOS = [
-          "com.kddi.digitalwallet",
+          "com.UPush.LKG",
           "com.kddi.wallet.stg",
           "com.kddi.wallet",
         ];
@@ -58,14 +58,12 @@
           "https://web.wallet.alpha-u.io/intro.html",
         ];
 
-        const a = document.createElement("a");
-        a.href = `${arrDomain[packageIndex]}/?apn=${arrPackage[packageIndex]}${
-          packageIndex > 0
-            ? `&ibi=${arrPackageIOS[packageIndex]}${
-                packageIndex === 2 ? `&isi=6444401106` : ``
-              }`
-            : ``
-        }&link=${
+        let a = document.createElement("a");
+        a.href = `${arrDomain[packageIndex]}/?apn=${
+          arrPackage[packageIndex]
+        }${`&ibi=${arrPackageIOS[packageIndex]}${
+          packageIndex === 2 ? `&isi=6444401106` : ``
+        }`}&link=${
           domainType === 1
             ? arrPrefix[packageIndex]
             : arrPrefixNew[packageIndex]
@@ -73,8 +71,26 @@
           txtDeepLink
         )}`;
         a.innerText = a.href;
-        const div = document.getElementById("divDynamicLink");
-        const p = document.createElement("p");
+        let div = document.getElementById("divDynamicLink");
+        let p = document.createElement("p");
+        p.appendChild(a);
+        div.appendChild(p);
+
+        a = document.createElement("a");
+        a.href = `${arrDomain[packageIndex]}/?apn=${
+          arrPackage[packageIndex]
+        }${`&ibi=${arrPackageIOS[packageIndex]}${
+          packageIndex === 2 ? `&isi=6444401106` : ``
+        }`}&efr=1&link=${
+          domainType === 1
+            ? arrPrefix[packageIndex]
+            : arrPrefixNew[packageIndex]
+        }${txtDeepLink.startsWith("wc:") ? `/wc?` : `?`}${makeURIComponent(
+          txtDeepLink
+        )}`;
+        a.innerText = a.href;
+        div = document.getElementById("divDynamicLink");
+        p = document.createElement("p");
         p.appendChild(a);
         div.appendChild(p);
 
@@ -96,7 +112,7 @@
   </head>
 
   <body onload="showUserAgent()">
-    <h1>ダミー画面</h1>
+    <h1>ダミー画面 0520 16:26</h1>
     <p>
       パッケージ名：
       <select id="txtPackage">
@@ -117,6 +133,7 @@
         id="txtDeepLink"
         size="50"
         value="dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"
+        onclick="this.value='';"
       />
     </p>
     <p>WalletConnectの場合、直接wc:のURLを記入する</p>
@@ -128,116 +145,32 @@
     <div id="divDynamicLink"></div>
     <p><button onclick="postMessage()">postMessageテスト</button></p>
     <p id="userAgent"></p>
-    <p>
-      <a
-        href="https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet"
-        >https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet"
-        target="_blank"
-        >https://kddidwdbg.page.link/?link=https://web.test-wallet.kddi.com/intro.html?dwPmtTransactionId%3D01GH8J40TE5PE4JNM9WJRANDSN&apn=com.kddi.digitalwallet（Open
-        in new window）</a
-      >
-    </p>
-    <p />
-    <p><a href="https://www.baidu.com">百度</a></p>
-    <p />
-    <p />
-    <p>開発環境用</p>
-    <p>
-      <a href="https://payment.digital-wallet.site/cardEditEnd">登録完了URL</a>
-    </p>
     <p />
     <p>
-      <a href="https://payment.digital-wallet.site/paySuccess"
-        >決済完了URL（dwpShopUrlなし）</a
-      >
-    </p>
-    <p>
-      <a href="https://payment.digital-wallet.site/paySuccess?dwpShopUrl="
-        >決済完了URL（dwpShopUrl=）</a
+      <a
+        href="https://alphauwallet.page.link/?link=https://web.wallet.kddi.com/intro.html?url=https://www.sushitop.io/13nftmaker/nftshot/index.html?meta=a991b8b8-173c-4937-a367-91a36e006c94&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106"
+        >https://alphauwallet.page.link/?link=https://web.wallet.kddi.com/intro.html?url=https://www.sushitop.io/13nftmaker/nftshot/index.html?meta=a991b8b8-173c-4937-a367-91a36e006c94&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106</a
       >
     </p>
     <p>
       <a
-        href="https://payment.digital-wallet.site/paySuccess?dwpShopUrl=https://www.baidu.com/"
-        >決済完了URL（dwpShopUrl=https://www.baidu.com）</a
-      >
-    </p>
-    <p />
-    <p>
-      <a href="https://payment.digital-wallet.site/payFailure"
-        >決済失敗URL（payFailureのみ）</a
+        href="https://tlq3.adj.st/?adj_t=1cxmmkbi&adj_redirect=https%3A%2F%2Fweb.wallet.kddi.com%2Fintro.html&para1=value1&para2=value2"
+        >https://tlq3.adj.st/?adj_t=1cxmmkbi&adj_redirect=https%3A%2F%2Fweb.wallet.kddi.com%2Fintro.html&para1=value1&para2=value2</a
       >
     </p>
     <p>
       <a
-        href="https://payment.digital-wallet.site/payFailure?dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
-        >決済失敗URL（MSGのみ）</a
+        href="https://app.adjust.com/jsr?url=https%3A%2F%2Ftlq3.adj.st%2F%3Fadj_t%3D1cxmmkbi%26adj_redirect%3Dhttps%253A%252F%252Fweb.wallet.kddi.com%252Fintro.html%26para1%3Dvalue1%26para2%3Dvalue2"
+        >https://app.adjust.com/jsr?url=https%3A%2F%2Ftlq3.adj.st%2F%3Fadj_t%3D1cxmmkbi%26adj_redirect%3Dhttps%253A%252F%252Fweb.wallet.kddi.com%252Fintro.html%26para1%3Dvalue1%26para2%3Dvalue2</a
       >
     </p>
     <p>
       <a
-        href="https://payment.digital-wallet.site/payFailure?dwErrCode=DW90001&dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
-        >決済失敗URL（MSG+dwErrCode）</a
+        href="digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK#"
+        >digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK#</a
       >
     </p>
-    <p>
-      <a
-        href="https://payment.digital-wallet.site/payFailure?dwErrCode=DW90001&dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82&pspErrCode=MPL90001,MPL90002"
-        >決済失敗URL決済失敗URL（MSG+dwErrCode+pspErrCode）</a
-      >
-    </p>
-    <p />
-    <p>検証環境用</p>
-    <p>
-      <a href="https://payment.test-wallet.kddi.com/cardEditEnd">登録完了URL</a>
-    </p>
-    <p />
-    <p>
-      <a href="https://payment.test-wallet.kddi.com/paySuccess"
-        >決済完了URL（dwpShopUrlなし）</a
-      >
-    </p>
-    <p>
-      <a href="https://payment.test-wallet.kddi.com/paySuccess?dwpShopUrl="
-        >決済完了URL（dwpShopUrl=）</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://payment.test-wallet.kddi.com/paySuccess?dwpShopUrl=https://www.baidu.com/"
-        >決済完了URL（dwpShopUrl=https://www.baidu.com）</a
-      >
-    </p>
-    <p />
-    <p>
-      <a href="https://payment.test-wallet.kddi.com/payFailure"
-        >決済失敗URL（payFailureのみ）</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://payment.test-wallet.kddi.com/payFailure?dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
-        >決済失敗URL（MSGのみ）</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://payment.test-wallet.kddi.com/payFailure?dwErrCode=DW90001&dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82"
-        >決済失敗URL（MSG+dwErrCode）</a
-      >
-    </p>
-    <p>
-      <a
-        href="https://payment.test-wallet.kddi.com/payFailure?dwErrCode=DW90001&dwMessage=%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%8C%E7%99%BA%E7%94%9F%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%94%AF%E6%89%95%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82&pspErrCode=MPL90001,MPL90002"
-        >決済失敗URL決済失敗URL（MSG+dwErrCode+pspErrCode）</a
-      >
-    </p>
-
+    <p><a href="payment.htm">決済用テスト画面</a></p>
     <p />
     <p>サンプル動画</p>
     <p>
