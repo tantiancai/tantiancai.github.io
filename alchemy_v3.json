@@ -1,0 +1,67 @@
+{
+  "ownedNfts": [
+    {
+      "contract": {
+        "address": "0x049B94882c082a1755F9D07773d1749B03D50EAe",
+        "name": "Phantom Galaxies: Starfighter Genesis",
+        "symbol": "PGSG",
+        "totalSupply": "3429",
+        "tokenType": "ERC721",
+        "contractDeployer": "0x9169BAD0878F16267cFaEB12e83F8CedBf9Ec2aE",
+        "deployedBlockNumber": 49055628,
+        "isSpam": null,
+        "spamClassifications": []
+      },
+      "tokenId": "1770",
+      "tokenType": "ERC721",
+      "name": "STD-001-001790",
+      "description": "Approved and ready for action is this Standard Issue Starfighter, completely unique in its trait composition.",
+      "tokenUri": "https://api.phantomgalaxies.com/account-svc/v1/blockchain/starfighters/137/0x049B94882c082a1755F9D07773d1749B03D50EAe/1770?format=bcmeta",
+      "image": {
+        "cachedUrl": "https://nft-cdn.alchemy.com/matic-mainnet/d274fd74288fb59ea4504eb5f9fcef63",
+        "thumbnailUrl": "https://res.cloudinary.com/alchemyapi/image/upload/thumbnailv2/matic-mainnet/d274fd74288fb59ea4504eb5f9fcef63",
+        "pngUrl": "https://res.cloudinary.com/alchemyapi/image/upload/convert-png/matic-mainnet/d274fd74288fb59ea4504eb5f9fcef63",
+        "contentType": "png",
+        "size": 220901,
+        "originalUrl": "https://nft.phantomgalaxies.com/starfighters/137/0x049b94882c082a1755f9d07773d1749b03d50eae/1770.350.png"
+      },
+      "raw": {
+        "tokenUri": "https://api.phantomgalaxies.com/account-svc/v1/blockchain/starfighters/137/0x049B94882c082a1755F9D07773d1749B03D50EAe/1770?format=bcmeta",
+        "metadata": {
+          "name": "STD-001-001790",
+          "description": "Approved and ready for action is this Standard Issue Starfighter, completely unique in its trait composition.",
+          "image": "https://nft.phantomgalaxies.com/starfighters/137/0x049b94882c082a1755f9d07773d1749b03d50eae/1770.350.png",
+          "animation_url": "https://nft.phantomgalaxies.com/starfighters/137/0x049b94882c082a1755f9d07773d1749b03d50eae/1770.2048.mp4",
+          "attributes": []
+        },
+        "error": null
+      },
+      "collection": {
+        "name": "Phantom Galaxies: Starfighter Genesis",
+        "slug": "phantom-galaxies-starfighter-genesis",
+        "externalUrl": null,
+        "bannerImageUrl": "https://i.seadn.io/s/raw/files/56700af5d8827231ba110c18321d7ec5.png?w=500&auto=format"
+      },
+      "mint": {
+        "mintAddress": null,
+        "blockNumber": null,
+        "timestamp": null,
+        "transactionHash": null
+      },
+      "owners": null,
+      "timeLastUpdated": "2024-05-13T03:25:00.285Z",
+      "balance": "1",
+      "acquiredAt": {
+        "blockTimestamp": null,
+        "blockNumber": null
+      }
+    }
+  ],
+  "totalCount": 1,
+  "validAt": {
+    "blockNumber": 7346857,
+    "blockHash": "0x797556bae92b91fa27a67cd1d8dc0e4ad908e50a7a670bc0fc12814479862336",
+    "blockTimestamp": "2024-05-22T07:02:11Z"
+  },
+  "pageKey": null
+}
