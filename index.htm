@@ -76,24 +76,6 @@
         p.appendChild(a);
         div.appendChild(p);
 
-        a = document.createElement("a");
-        a.href = `${arrDomain[packageIndex]}/?apn=${
-          arrPackage[packageIndex]
-        }${`&ibi=${arrPackageIOS[packageIndex]}${
-          packageIndex === 2 ? `&isi=6444401106` : ``
-        }`}&efr=1&link=${
-          domainType === 1
-            ? arrPrefix[packageIndex]
-            : arrPrefixNew[packageIndex]
-        }${txtDeepLink.startsWith("wc:") ? `/wc?` : `?`}${makeURIComponent(
-          txtDeepLink
-        )}`;
-        a.innerText = a.href;
-        div = document.getElementById("divDynamicLink");
-        p = document.createElement("p");
-        p.appendChild(a);
-        div.appendChild(p);
-
         if (txtDeepLink.startsWith("wc:")) {
           const a2 = document.createElement("a");
           a2.href = `alpha-u-wallet://wc?${makeURIComponent(txtDeepLink)}`;
@@ -112,7 +94,7 @@
   </head>
 
   <body onload="showUserAgent()">
-    <h1>ダミー画面 0530 13:07</h1>
+    <h1>ダミー画面 0531 15:52</h1>
     <p>
       パッケージ名：
       <select id="txtPackage">
@@ -146,28 +128,29 @@
     <p><button onclick="postMessage()">postMessageテスト</button></p>
     <p id="userAgent"></p>
     <p />
+    <p></p>
     <p>
       <a
-        href="https://alphauwallet.page.link/?link=https://web.wallet.kddi.com/intro.html?url=https://www.sushitop.io/13nftmaker/nftshot/index.html?meta=a991b8b8-173c-4937-a367-91a36e006c94&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106"
-        >https://alphauwallet.page.link/?link=https://web.wallet.kddi.com/intro.html?url=https://www.sushitop.io/13nftmaker/nftshot/index.html?meta=a991b8b8-173c-4937-a367-91a36e006c94&apn=com.kddi.wallet&ibi=com.kddi.wallet&isi=6444401106</a
+        href="https://tlq3.adj.st/?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&para1=value1&para2=value2"
+        >https://tlq3.adj.st/?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&amp;para1=value1&amp;para2=value2</a
       >
     </p>
     <p>
       <a
-        href="https://tlq3.adj.st?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&para1=value1&para2=value2"
-        >https://tlq3.adj.st?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&amp;para1=value1&amp;para2=value2</a
+        href="wc:abdc7c51b56a27330283f2591e493c8e139bd356784af3ad52a6d1f41b839997@2?relay-protocol=irn&symKey=c782d445bb8d0a02898bb71f833f5799629d07073a24ec61b8df603f15809164"
+        >wc:abdc7c51b56a27330283f2591e493c8e139bd356784af3ad52a6d1f41b839997@2?relay-protocol=irn&symKey=c782d445bb8d0a02898bb71f833f5799629d07073a24ec61b8df603f15809164</a
       >
     </p>
     <p>
       <a
-        href="https://app.adjust.com/jsr?url=https%3A%2F%2Ftlq3.adj.st%2F%3Fadj_t%3D1cxmmkbi%26adj_redirect%3Dhttps%253A%252F%252Fweb.wallet.kddi.com%252Fintro.html%26para1%3Dvalue1%26para2%3Dvalue2"
-        >https://app.adjust.com/jsr?url=https%3A%2F%2Ftlq3.adj.st%2F%3Fadj_t%3D1cxmmkbi%26adj_redirect%3Dhttps%253A%252F%252Fweb.wallet.kddi.com%252Fintro.html%26para1%3Dvalue1%26para2%3Dvalue2</a
+        href="alpha-u-wallet://wc?uri=wc%3Affc05c4113a9f9414a2afb836e41ae0f3c02f8f593bdedadcc1f316f17a4fce5%402%3Frelay-protocol%3Dirn%26symKey%3D91edba7f79dae39237936359e9367c4f4345300fb4db63c16360d40d8ff9f1e1"
+        >alpha-u-wallet://wc?uri=wc%3Affc05c4113a9f9414a2afb836e41ae0f3c02f8f593bdedadcc1f316f17a4fce5%402%3Frelay-protocol%3Dirn%26symKey%3D91edba7f79dae39237936359e9367c4f4345300fb4db63c16360d40d8ff9f1e1</a
       >
     </p>
     <p>
       <a
-        href="digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK#"
-        >digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK#</a
+        href="digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK"
+        >digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK</a
       >
     </p>
     <p><a href="payment.htm">決済用テスト画面</a></p>
