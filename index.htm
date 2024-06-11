@@ -16,73 +16,93 @@
         }
       }
 
-      function makeURIComponent(input) {
-        let strRet = encodeURIComponent(input);
-        if (input.startsWith("wc:")) {
-          const wcURI = encodeURIComponent(input);
-          strRet = `uri=${wcURI}`;
-        }
-        return strRet;
-      }
-
-      function makeDynamicLink() {
+      function makeDeepLink() {
         const packageIndex = Number(
           document.getElementById("txtPackage").value
         );
         const txtDeepLink = document.getElementById("txtDeepLink").value;
-        const domainType = Number(document.getElementById("txtDomain").value);
 
         const arrDomain = [
-          "https://kddidwdbg.page.link",
-          "https://testalphauwallet.page.link",
-          "https://alphauwallet.page.link",
+          "https://tlq3.adj.st",
+          "https://alpha-u-wallet.go.link",
+          "https://d6kw.adj.st",
         ];
-        const arrPackage = [
-          "com.kddi.digitalwallet",
-          "com.kddi.wallet.test",
-          "com.kddi.wallet",
-        ];
-        const arrPackageIOS = [
-          "com.UPush.LKG",
-          "com.kddi.wallet.stg",
-          "com.kddi.wallet",
-        ];
-        const arrPrefix = [
-          "https://web.test-wallet.kddi.com/intro.html",
-          "https://web.test-wallet.kddi.com/intro.html",
-          "https://web.wallet.kddi.com/intro.html",
-        ];
-        const arrPrefixNew = [
+        const arrToken = ["1crxxn9n", "1d9fol4u_1dqi80o0", "1d9fol4u_1dqi80o0"];
+        const arrRedirect = [
           "https://web.test-wallet.alpha-u.io/intro.html",
           "https://web.test-wallet.alpha-u.io/intro.html",
           "https://web.wallet.alpha-u.io/intro.html",
         ];
 
+        let customPara = document.getElementById("txtPara").innerText;
+        if (customPara) {
+          customPara = "&" + customPara + encodeURIComponent(txtDeepLink);
+        } else {
+          customPara = "/wc?uri%3D" + encodeURIComponent(txtDeepLink);
+        }
+
+        const url = `${arrDomain[packageIndex]}?adj_t=${encodeURIComponent(
+          arrToken[packageIndex]
+        )}&adj_redirect=${encodeURIComponent(
+          arrRedirect[packageIndex]
+        )}${customPara}`;
+
         let a = document.createElement("a");
-        a.href = `${arrDomain[packageIndex]}/?apn=${
-          arrPackage[packageIndex]
-        }${`&ibi=${arrPackageIOS[packageIndex]}${
-          packageIndex === 2 ? `&isi=6444401106` : ``
-        }`}&link=${
-          domainType === 1
-            ? arrPrefix[packageIndex]
-            : arrPrefixNew[packageIndex]
-        }${txtDeepLink.startsWith("wc:") ? `/wc?` : `?`}${makeURIComponent(
-          txtDeepLink
-        )}`;
-        a.innerText = a.href;
+        a.innerText = url;
+        a.href = url;
         let div = document.getElementById("divDynamicLink");
         let p = document.createElement("p");
         p.appendChild(a);
-        div.appendChild(p);
+        div.innerHTML = p.outerHTML;
 
         if (txtDeepLink.startsWith("wc:")) {
           const a2 = document.createElement("a");
-          a2.href = `alpha-u-wallet://wc?${makeURIComponent(txtDeepLink)}`;
+          a2.href = `alpha-u-wallet://wc?uri=${encodeURIComponent(
+            txtDeepLink
+          )}`;
           a2.innerText = a2.href;
           const p2 = document.createElement("p");
           p2.appendChild(a2);
           div.appendChild(p2);
+        }
+      }
+
+      function setType() {
+        const arrPage = ["BrowserMain", "Profile", "PaymentMethodSelect", ""];
+        const arrPara = ["url", "", "transactionId", ""];
+
+        const type = Number(document.getElementById("txtType").value);
+        const page = arrPage[type];
+        const para = arrPara[type];
+        const span = document.getElementById("txtPara");
+        let content = "";
+        if (page) {
+          content = content + "page=" + page;
+        }
+        if (para) {
+          content = content + "&" + para + "=";
+        }
+        span.innerText = content;
+
+        const input = document.getElementById("txtDeepLink");
+        switch (page) {
+          case "BrowserMain":
+            input.value = "https://www.google.com/search?q=test&oq=test#para1";
+            input.style.display = "inline";
+            break;
+          case "Profile":
+            input.value = "";
+            input.style.display = "none";
+            break;
+          case "PaymentMethodSelect":
+            input.value = "01GH8J40TE5PE4JNM9WJRANDSN";
+            input.style.display = "inline";
+            break;
+          default:
+            input.value =
+              "wc:abdc7c51b56a27330283f2591e493c8e139bd356784af3ad52a6d1f41b839997@2?relay-protocol=irn&symKey=c782d445bb8d0a02898bb71f833f5799629d07073a24ec61b8df603f15809164";
+            input.style.display = "inline";
+            break;
         }
       }
 
@@ -94,45 +114,48 @@
   </head>
 
   <body onload="showUserAgent()">
-    <h1>ダミー画面 0531 15:52</h1>
-    <p>
-      パッケージ名：
-      <select id="txtPackage">
-        <option value="0">Debug環境</option>
-        <option value="1" selected="selected">検証環境</option>
-        <option value="2">商用環境</option>
-      </select>
-    </p>
-    <p>
-      domain:
-      <select id="txtDomain">
-        <option value="0" selected="selected">新ドメイン</option>
-        <option value="1">旧ドメイン</option>
-      </select>
-    </p>
-    <p>
-      DeepLink（パラメータ）：<br /><input
-        id="txtDeepLink"
-        size="50"
-        value="dwPmtTransactionId=01GH8J40TE5PE4JNM9WJRANDSN"
-        onclick="this.value='';"
-      />
-    </p>
-    <p>WalletConnectの場合、直接wc:のURLを記入する</p>
-    <p>
-      <button id="btnDynamicLink" onclick="makeDynamicLink()">
-        DynamicLink作成する
-      </button>
-    </p>
-    <div id="divDynamicLink"></div>
-    <p><button onclick="postMessage()">postMessageテスト</button></p>
+    <h1>ダミー画面 0611 16:52</h1>
+    <form onsubmit="event.preventDefault(); makeDeepLink();">
+      <p>
+        環境：
+        <select id="txtPackage">
+          <option value="0" selected="selected">検証環境</option>
+          <option value="1">商用環境</option>
+          <option value="2">商用環境（RAWドメイン）</option>
+        </select>
+      </p>
+      <p>
+        DeepLink種類：
+        <select id="txtType" onchange="setType()">
+          <option value="0" selected="selected">ブラウザでURL開く</option>
+          <option value="1">プロフィールに遷移</option>
+          <option value="2">決済画面に遷移</option>
+          <option value="3">WalletConnect接続</option>
+        </select>
+      </p>
+      <p>
+        パラメータ：<br />
+        <span id="txtPara">page=BrowserMain&url=</span
+        ><input
+          id="txtDeepLink"
+          size="50"
+          value="https://www.google.com/search?q=test&rlz=1C1GCEU_zh-CNJP1041JP1041&oq=test"
+          onclick="this.value='';"
+        />
+      </p>
+      <p>
+        <button id="btnDynamicLink" type="submit">DeepLinkを作成する</button>
+      </p>
+      <div id="divDynamicLink"></div>
+    </form>
+
     <p id="userAgent"></p>
     <p />
-    <p></p>
+    <p />
     <p>
       <a
-        href="https://tlq3.adj.st/?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&para1=value1&para2=value2"
-        >https://tlq3.adj.st/?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&amp;para1=value1&amp;para2=value2</a
+        href="https://tlq3.adj.st?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&para1=value1&para2=value2"
+        >https://tlq3.adj.st?adj_t=1crxxn9n&adj_redirect=https%3A%2F%2Fweb.wallet.alpha-u.io%2Fintro.html&amp;para1=value1&amp;para2=value2</a
       >
     </p>
     <p>
@@ -148,11 +171,15 @@
       >
     </p>
     <p>
+      <a href="alpha-u-wallet://test">alpha-u-wallet://test</a>
+    </p>
+    <p>
       <a
         href="digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK"
         >digitalwallet://signupWithSocial?code=965cb01556f44b618deeb4424cb78f23&state=GSYZLh5pidZTTLYK</a
       >
     </p>
+    <p><a href="firebase.htm">Firebaseテスト画面</a></p>
     <p><a href="payment.htm">決済用テスト画面</a></p>
     <p />
     <p>サンプル動画</p>
