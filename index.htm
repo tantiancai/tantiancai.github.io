@@ -64,6 +64,13 @@
           const p2 = document.createElement("p");
           p2.appendChild(a2);
           div.appendChild(p2);
+
+          const a3 = document.createElement("a");
+          a3.href = txtDeepLink;
+          a3.innerText = a3.href;
+          const p3 = document.createElement("p");
+          p3.appendChild(a3);
+          div.appendChild(p3);
         }
       }
 
@@ -114,7 +121,7 @@
   </head>
 
   <body onload="showUserAgent()">
-    <h1>ダミー画面 0611 16:52</h1>
+    <h1>ダミー画面 0612 16:00</h1>
     <form onsubmit="event.preventDefault(); makeDeepLink();">
       <p>
         環境：
