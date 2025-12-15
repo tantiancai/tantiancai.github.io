@@ -3,52 +3,47 @@
     <title>test web address</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      body,
-      html {
+      html,
+      body {
         height: 100%;
         margin: 0;
         padding: 0;
+        overflow: hidden; /* 禁止页面滚动 */
       }
       .wrapper.view_lp {
-        min-height: 100vh; /* 占满整个屏幕高度 */
+        height: 100vh; /* 满屏高 */
         display: flex;
-        justify-content: center; /* 水平居中 */
+        justify-content: center;
         align-items: center; /* 垂直居中 */
-      }
-      .header_area {
         max-width: 500px;
         width: 100%;
-        background: #fff;
-        padding: 24px 16px;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
         text-align: center;
+        margin: 0 auto;
+        /* 无背景，无阴影无圆角 */
       }
     </style>
   </head>
   <body>
     <div class="wrapper view_lp">
-      <div class="header_area">
-        <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
-        <p>
-          誠に勝手ながら、αU walletアプリは 2026年3月31日
-          をもちまして終了させていただくこととなりました。
-        </p>
-        <p>これまでご愛顧いただきました皆様に心より感謝申し上げます。</p>
-        <p>詳しくは、以下のリンクをご覧ください</p>
-        <h4>
-          <a
-            href="https://alpha-u.io/about/wallet"
-            onclick="window.ReactNativeWebView.postMessage('这是网页发给RN的数据');"
-            >サービス終了に関する詳細はこちら</a
-          >
-        </h4>
-        <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
-        <p>
-          サービス終了までのスケジュールや今後の対応については、上記リンク先にてご案内しております。
-        </p>
-        <p>ご利用いただきありがとうございました。</p>
-      </div>
+      <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
+      <p>
+        誠に勝手ながら、αU walletアプリは 2026年3月31日
+        をもちまして終了させていただくこととなりました。
+      </p>
+      <p>これまでご愛顧いただきました皆様に心より感謝申し上げます。</p>
+      <p>詳しくは、以下のリンクをご覧ください</p>
+      <h4>
+        <a
+          href="https://alpha-u.io/about/wallet"
+          onclick="window.ReactNativeWebView.postMessage('这是网页发给RN的数据');"
+          >サービス終了に関する詳細はこちら</a
+        >
+      </h4>
+      <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
+      <p>
+        サービス終了までのスケジュールや今後の対応については、上記リンク先にてご案内しております。
+      </p>
+      <p>ご利用いただきありがとうございました。</p>
     </div>
   </body>
 </html>
