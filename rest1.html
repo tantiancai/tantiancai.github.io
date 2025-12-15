@@ -10,34 +10,45 @@
         padding: 0;
       }
       .wrapper.view_lp {
-        min-height: 100vh;
+        min-height: 100vh; /* 占满整个屏幕高度 */
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center; /* 水平居中 */
+        align-items: center; /* 垂直居中 */
+      }
+      .header_area {
+        max-width: 500px;
+        width: 100%;
+        background: #fff;
+        padding: 24px 16px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <div class="wrapper view_lp">
-      <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
-      <p>
-        誠に勝手ながら、αU walletアプリは 2026年3月31日
-        をもちまして終了させていただくこととなりました。
-      </p>
-      <p>これまでご愛顧いただきました皆様に心より感謝申し上げます。</p>
-      <p>詳しくは、以下のリンクをご覧ください</p>
-      <h4>
-        <a
-          href="https://alpha-u.io/about/wallet"
-          onclick="window.ReactNativeWebView.postMessage('这是网页发给RN的数据');"
-          >サービス終了に関する詳細はこちら</a
-        >
-      </h4>
-      <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
-      <p>
-        サービス終了までのスケジュールや今後の対応については、上記リンク先にてご案内しております。
-      </p>
-      <p>ご利用いただきありがとうございました。</p>
+      <div class="header_area">
+        <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
+        <p>
+          誠に勝手ながら、αU walletアプリは 2026年3月31日
+          をもちまして終了させていただくこととなりました。
+        </p>
+        <p>これまでご愛顧いただきました皆様に心より感謝申し上げます。</p>
+        <p>詳しくは、以下のリンクをご覧ください</p>
+        <h4>
+          <a
+            href="https://alpha-u.io/about/wallet"
+            onclick="window.ReactNativeWebView.postMessage('这是网页发给RN的数据');"
+            >サービス終了に関する詳細はこちら</a
+          >
+        </h4>
+        <p>平素より当アプリをご利用いただき、誠にありがとうございます。</p>
+        <p>
+          サービス終了までのスケジュールや今後の対応については、上記リンク先にてご案内しております。
+        </p>
+        <p>ご利用いただきありがとうございました。</p>
+      </div>
     </div>
   </body>
 </html>
