@@ -8,19 +8,18 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* 禁止页面滚动 */
+        background-color: lemonchiffon;
       }
       .wrapper.view_lp {
-        height: 100vh; /* 满屏高 */
+        height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center; /* 居中对齐 */
+        align-items: center;
       }
       .header_area {
         max-width: 500px;
         width: 100%;
         padding: 24px 16px;
-        text-align: center;
       }
     </style>
   </head>
@@ -35,10 +34,7 @@
         <p>これまでご愛顧いただきました皆様に心より感謝申し上げます。</p>
         <p>詳しくは、以下のリンクをご覧ください</p>
         <h4>
-          <a
-            href="https://alpha-u.io/about/wallet"
-            onclick="window.ReactNativeWebView.postMessage('这是网页发给RN的数据');"
-          >
+          <a href="https://alpha-u.io/about/wallet">
             サービス終了に関する詳細はこちら
           </a>
         </h4>
